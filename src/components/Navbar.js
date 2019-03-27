@@ -2,7 +2,7 @@
  * @Author: Prawee Wongsa prawee.w@integra8t.com 
  * @Date: 2019-03-27 16:53:34 
  * @Last Modified by: Prawee Wongsa
- * @Last Modified time: 2019-03-27 17:10:12
+ * @Last Modified time: 2019-03-27 17:49:41
  */
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
@@ -21,6 +21,8 @@ class Navbar extends Component {
                     <Link to="/login" className="nav-link">
                         Login
                     </Link>
+                </li>
+                <li className="nav-item">
                     <Link to="/register" className="nav-link">
                         Register
                     </Link>
@@ -35,7 +37,7 @@ class Navbar extends Component {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <a onClick={this.logOut.bind(this)} className="nav-link">
+                    <a href="#top" onClick={this.logOut.bind(this)} className="nav-link">
                         Logout
                     </a>
                 </li>
@@ -61,7 +63,7 @@ class Navbar extends Component {
                             </Link>
                         </li>
                     </ul>
-                    {localStorage.usertoken ? userLink : loginRegLink}
+                    {localStorage.userToken ? userLink : loginRegLink}
                 </div>
             </nav>
         )
