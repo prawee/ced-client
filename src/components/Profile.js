@@ -2,7 +2,7 @@
  * @Author: Prawee Wongsa prawee.w@integra8t.com 
  * @Date: 2019-03-27 17:13:42 
  * @Last Modified by: Prawee Wongsa
- * @Last Modified time: 2019-03-27 17:20:51
+ * @Last Modified time: 2019-03-27 17:42:31
  */
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
@@ -19,7 +19,7 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        const token = localStorage.usertoken 
+        const token = localStorage.userToken 
         const decoded = jwt_decode(token)
         getUser(decoded.uid).then(res => {
             this.setState({
