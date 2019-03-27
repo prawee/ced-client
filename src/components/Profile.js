@@ -2,7 +2,7 @@
  * @Author: Prawee Wongsa prawee.w@integra8t.com 
  * @Date: 2019-03-27 17:13:42 
  * @Last Modified by: Prawee Wongsa
- * @Last Modified time: 2019-03-27 17:42:31
+ * @Last Modified time: 2019-03-27 18:25:56
  */
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
@@ -19,18 +19,24 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        const token = localStorage.userToken 
-        const decoded = jwt_decode(token)
-        getUser(decoded.uid).then(res => {
-            this.setState({
-                first_name: res.data.first_name,
-                last_name: res.data.last_name,
-                email: res.data.email
+        const token = localStorage.userToken
+        if (token) {     
+            const decoded = jwt_decode(token)
+            getUser(decoded.uid).then(res => {
+                this.setState({
+                    first_name: res.data.first_name,
+                    last_name: res.data.last_name,
+                    email: res.data.email
+                })
             })
-        })
+        }
     }
 
     render() {
+        const token = localStorage.userToken
+        if (token === undefined)
+            this.props.history.push(`/`)
+
         return (
             <div className="container">
                 <div className="jumbotron mt-5">
