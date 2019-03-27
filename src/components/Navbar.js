@@ -2,7 +2,7 @@
  * @Author: Prawee Wongsa prawee.w@integra8t.com 
  * @Date: 2019-03-27 16:53:34 
  * @Last Modified by: Prawee Wongsa
- * @Last Modified time: 2019-03-27 17:49:41
+ * @Last Modified time: 2019-03-27 17:56:25
  */
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
@@ -44,9 +44,9 @@ class Navbar extends Component {
             </ul>
         )
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <button type="button"
-                    className="navbar-togger"
+                    className="navbar-toggler"
                     data-toggle="collapse"
                     data-target="#navbar1"
                     aria-controls="navbar1"
